@@ -5,3 +5,5 @@ setlocal textwidth=80
 setlocal smarttab
 setlocal expandtab
 set nosmartindent
+set colorcolumn=+1
+highlight ColorColumn ctermbg=lightgrey guibg=#293739
