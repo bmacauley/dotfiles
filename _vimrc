@@ -1,10 +1,34 @@
-" .vimrc - vim configuration file
+" => Info {{{
+"
+" Name: .vimrc
 " Author: Brian Macauley
-" 
+" Version: 1 - 13/06/2011
+"
+" Sections:
+" Environment
+
+" Plugins:
+""Plugin
+
+" }}}
 
 
+" => Environment {{{
+
+"Basics
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/vimrc_example.vim
+
+"set shell to bash
+set shell=C:/cygwin/bin/bash
+
+"Windows compatible
+" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
+" across (heterogeneous) systems easier. 
+"if has('win32') || has('win64')
+"    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+"endif
+"
 source $VIMRUNTIME/mswin.vim
 behave mswin
 set shell=C:/cygwin/bin/bash
@@ -12,6 +36,12 @@ set shell=C:/cygwin/bin/bash
 " file encoding detection
 set fileencodings=utf-8,latin1
 
+" setup Pathogen bundle support
+filetype off
+
+let g:pathogen_disabled = ['supertab', 'gist', 'dbext', 'makegreen']  "disabled plugins
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 " vim configuration
 "set guioptions-=T "disable tool bar
 
@@ -20,243 +50,214 @@ set nobackup
 " Save Vim swp files to a temp directory
 "silent execute '!mkdir "'.$VIMRUNTIME.'/temp"'
 "silent execute '!del "'.$VIMRUNTIME.'/temp/*~"'
-set backupdir=$TEMP//
-set directory=$TEMP//
+"set backupdir=$TEMP//
+"set directory=$TEMP//
 
 
 
-" first clear any existing autocommands:
+" first clear any existing autocommandse
 autocmd!
 
-" ###############	Terminal Settings	#################
-"
-"
-set guifont=Consolas:h10
-set lines=55
-set co=110
-
-"set horizontal scrollbar on
-set guioptions+=b
-
-" Remove menu bar
-set guioptions-=m
-
-" Remove toolbar
-set guioptions-=T
+" }}}
 
 
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" => General {{{
 
-
-
-
-
-
-"
-filetype plugin indent on
-
+filetype plugin indent on " Automatically detect file types
+syntax on " syntax highlighting
 colorscheme molokai
-
-" sparkup config
-let g:sparkup='C:/Users/bmacauley/vimfiles/ftplugin/html/sparkup.py'
-
-
-
-" diff configuration
-
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
-
-
-" ###############	User Interface		#################
-
-"display ruler
-set ruler
-
-
-"display line numbers
-set number
-
-
-" have syntax highlighting in terminals which can display colours:
-  syntax on
-
-
-" have fifty lines of command-line (etc) history:
-set history=50 
-"This setting prevents vi from making its annoying beeps when a command doesn't work. 
-"Instead, it briefly flashes the screen -- much less annoying.
-set vb t_vb=
-
+set history=1000 " Store a ton of history (default is 20)
 " remember all of these between sessions, but only 10 search terms; also
 " remember info for 10 files, but never any on removable disks, don't
 " remember marks in files, don't rehighlight old search patterns, and only save up to
 " 100 lines of registers; including @10 in there should restrict input
 " buffer
 set viminfo=/10,'10,r/mnt/zip,r/mnt/floppy,f0,h,\"100
-
-
-" have command-line completion <Tab> (for filenames, help topics, option
-" names)first list the available options and complete the longest common part,
-" then have further <Tab>s cycle through the possibilities:
-set wildmode=list:longest,full
-
-
-" use "[RO]" for "[readonly]" to save space in the message line:
-set shortmess+=r
-
-
+set mouse=a " automatically enable mouse usage
+set shortmess+=filmnrxoOtT     " abbrev. of messages (avoids 'hit enter')
+set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 " display the current mode and partially-typed commands in the status line:
 set showmode
 set showcmd
 
 
-" have the mouse enabled all the time:
-set mouse=a
-
- 
-
-" ###############	Text Formatting- General	#################
-
-" don't make it look like there are line breaks where there aren't:
-set nowrap
+" }}}
 
 
-" ###############	Text Formatting- General	#################
+" => Vim User Interface{{{
 
-" enable filetype detection:
-filetype on
+set lines=55
+set columns=110
+set guifont=Consolas:h10
 
-" show matching brackets
-set showmatch
+set guioptions+=b "set horizontal scrollbar on
+set guioptions-=m " Remove menu bar
+set guioptions-=T " Remove toolbar
 
-" Automatically save before commands like :next and :make
-"set autowrite	
+set ruler "display ruler
+set number "display line numbers
 
+"This setting prevents vi from making its annoying beeps when a command doesn't work. 
+"Instead, it briefly flashes the screen -- much less annoying.
+set vb t_vb=
 
-
-" ###############	Search & Replace	#################
-
-" make searches case-insensitive, unless they contain upper-case letters:
-set ignorecase
-set smartcase
-
-" show the `best match so far' as search strings are typed:
-set incsearch
-
-" assume the /g flag on :s substitutions to replace all matches in a line:
-set gdefault
-
+"if has('cmdline_info')
+"	set ruler                  	" show the ruler
+"	set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
+"	set showcmd                " show partial commands in status line and
+" selected characters/lines in visual mode
+"endif
 
 
-" ###############	Spelling		#################
+if has('statusline')
+    set laststatus=2
 
-" define `Ispell' language and personal dictionary, used in several places
-" below:
-let IspellLang = 'british'
-let PersonalDict = '~/.ispell_' . IspellLang
+	" Broken down into easily includeable segments
+    set statusline=%<%f\    " Filename
+    set statusline+=%w%h%m%r " Options
+"    set statusline+=%{fugitive#statusline()} "  Git Hotness
+    set statusline+=\ [%{&ff}/%Y]            " filetype
+    set statusline+=\ [%{getcwd()}]          " current dir
+		"set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
 
+" command <Tab> completion, list matches, then longest common part, then all.
+set wildmode=list:longest,full 
+set wildmenu  " show list instead of just completing
+set showmatch " show matching brackets
+set incsearch " find as you type search
+set hlsearch " highlight search terms
+set ignorecase " case insensitive search
+set smartcase " case sensitive when upper case present
+set matchpairs+=<:> "have % bounce between angled brackets,etc
+set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
+set gdefault " the /g flag on :s substitutions by default
+set backspace=indent,eol,start	" backspace for dummy
+"set linespace=0 " No extra spaces between rows
+set scrolljump=5 " lines to scroll when cursor leaves screen
+set scrolloff=3 " minimum lines to keep above and below cursor
+set foldenable  " auto fold code
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+set spell spelllang=en_gb
+setlocal spell spelllang=en_gb
 
-
-" ###############	Keystrokes- Moving around 		#################
-
-" have the h and l cursor keys wrap between lines (like <Space> and <BkSpc> do
-" by default), and ~ covert case over line breaks; also have the cursor keys
-" wrap in insert mode:
-set whichwrap=h,l,~,[,]
-
-" page down with <Space> (like in `Lynx', `Mutt', `Pine', `Netscape Navigator',
-" `SLRN', `Less', and `More'); page up with - (like in `Lynx', `Mutt', `Pine'),
-" or <BkSpc> (like in `Netscape Navigator'):
-noremap <Space> <PageDown>
-noremap <BS> <PageUp>
-noremap - <PageUp>
-" [<Space> by default is like l, <BkSpc> like h, and - like k.]
-
-" scroll the window (but leaving the cursor in the same place) by a couple of
-" lines up/down with <Ins>/<Del> (like in `Lynx'):
-"noremap <Ins> 2<C-Y>
-"noremap <Del> 2<C-E>
-" [<Ins> by default is like i, and <Del> like x.]
-
-" use <F6> to cycle through split windows (and <Shift>+<F6> to cycle backwards,
-" where possible):
-nnoremap <F6> <C-W>w
-nnoremap <S-F6> <C-W>W
-
-" use <Ctrl>+N/<Ctrl>+P to cycle through files:
-nnoremap <C-N> :next<CR>
-nnoremap <C-P> :prev<CR>
-" [<Ctrl>+N by default is like j, and <Ctrl>+P like k.]
-
-" have % bounce between angled brackets, as well as t'other kinds:
-" 
-set matchpairs+=<:>
-
-" have <F1> prompt for a help topic, rather than displaying the introduction
-" page, and have it do this from any mode:
-nnoremap <F0> :help<Space>
-vmap <F1> <C-C><F1>
-omap <F1> <C-C><F1>
-map! <F1> <C-C><F1>
+" }}}
 
 
+" =>  Formatting{{{
 
-" ###############	Keystrokes- formatting		#################
+set nowrap " wrap long lines
+set autoindent " indent at the same level of the previous line
+set shiftwidth=4  " use indents of 4 spaces
+set expandtab " tabs are spaces, not tabs
+set tabstop=4 " an indentation every four columns
+set softtabstop=4 " let backspace delete indent
 
-" have Q reformat the current paragraph (or selected text if there is any):
-nnoremap Q gqap
-vnoremap Q gq
-
-" have the usual indentation keystrokes still work in visual mode:
-vnoremap <C-T> >
-vnoremap <C-D> <LT>
-vmap <Tab> <C-T>
-vmap <S-Tab> <C-D>
-
-" have Y behave analogously to D and C rather than to dd and cc (which is
-" already done by yy):
-noremap Y y$
+" }}}
 
 
+" => {{{Key mappings
 
-" ###############	Keystrokes- toggles		#################
+"The default leader is '\', but many people prefer ',' as it's in a standard
+"location
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+"let mapleader = ","
+"let g:mapleader = ","
 
-" allow <BkSpc> to delete line breaks, beyond the start of the current
-" insertion, and over indentations:
-set backspace=eol,start,indent
-
-" have <Tab> (and <Shift>+<Tab> where it works) change the level of
-" indentation:
-inoremap <Tab> <C-T>
-inoremap <S-Tab> <C-D>
-" [<Ctrl>+V <Tab> still inserts an actual tab character.]
-
-" abbreviations:
-iabbrev lfpg Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch
+ " Making it so ; works like : for commands. Saves typing and eliminates 
+ " :W style typos due to lazy holding shift.
+nnoremap ; :
+"clearing highlighted search
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 
+" Shortcuts
+" Change Working Directory to that of the current file
+cmap cwd lcd %:p:h
+cmap cd. lcd %:p:h
+
+" Smart mappings on the command line
+"home directory
+cno $h e ~/  
+"desktop
+cno $d e ~/Desktop/
+" current directory
+cno $j e ./
+
+
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+
+ " Wrapped lines goes down/up to next row, rather than next line in file.
+nnoremap j gj
+nnoremap k gk
+
+"Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+"spelling hortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
+
+
+
+" }}}
+
+
+" => {{{Plugins
+
+" VCSCommand {{{
+
+"let b:VCSCommandMapPrefix=',v'
+"let b:VCSCommandVCSType='git'
+" }}}
+
+" NerdTree {{{
+
+
+
+" }}}
+
+" SuperTab {{{
+
+
+
+" }}}
+
+" SnipMate {{{
+
+
+
+" }}}
+
+" Fuzzyfinder {{{
+
+
+
+" }}}
+
+" Command-T {{{
+
+
+
+" }}}
+
+" Tasklist {{{
+
+"change key map <leader> t conflicts with Command-T
+map <Leader>ta <Plug>TaskList
+
+
+" }}}
+
+" }}}
 
