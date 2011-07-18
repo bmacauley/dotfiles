@@ -136,9 +136,6 @@
 [submodule "bundle/yaml"]
 	path = bundle/yaml
 	url = https://github.com/vim-scripts/yaml.vim.git
-[submodule "bundle/python-ifold"]
-	path = bundle/python-ifold
-	url = https://github.com/vim-scripts/python_ifold.git
 [submodule "bundle/dbext"]
 	path = bundle/dbext
 	url = https://github.com/vim-scripts/dbext.vim.git
