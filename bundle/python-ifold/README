@@ -1,0 +1,44 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2002
+
+Folds are created for:
+
+- 'class' and 'def' definitions.
+- Blocks between {{{, }}} markers (but not yet {{{n, etc.)
+
+
+Flavors:
+
+- A (python_ifold.a.vim) - ideal for legacy systems.
+- B (python_ifold.b.vim) -  with all options set by default.
+- C (python_ifold.c.vim) -  same as flavor B, but uses extra Vim settings for user comfort.
+
+
+Improvements over python_fold:
+
+- Fixes the wild (i.e. bogus) folding bug 
+- Shows class and function signatures
+- Now, as in the original, flavor B will omit any misplaced comment mark
+- Flavor A boosts performance on outdated systems, something of great importance when there are lots of nested folds over large code pages
+
+
+Caveats:
+
+- The fold level for each fold is equal to the indentation divided by the value of the 'shiftwidth' option, so make sure that 'shiftwidth' is set to the right value for your code. For best results set 'shiftwidth' , 'softtabstop'  and 'tabstop' to the same value, and use 'expandtab' and 'autoindent' (all included in flavor C).
+
+Example:
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set foldcolumn=1  " Optional
+
+- Class and function folds show a counter of number of lines (and the first line below the signature) that are within the fold when it's closed. Read the change history to learn more about this.
+
+- Press F key whenever you want to disable temporarily the folding, press F again to re-enable it (won't fold the block of code where the cursor is, though).
+
+- If g:ifold_mode is set to a value greater than 0, will make extra parsing to your code to avoid including blank lines at the end of each fold and wont unfold your code if any comment marks are misplaced. This behavior is set by default in flavor B. But be warned , though. This option requires more power from your system (hence the two versions: 'A' for lower-end systems and 'B' for powerful-enough systems), so if you lack of requirements you shouldn't use it. 
+
+- The docstring is not shown at all.
+
+- If you choose flavor A or if you set the global g:ifold_mode to 0, bare in mind that any comment mark between the beginning of a line and the first expression's character (of a sentence) WILL interfere with the whole folding process, that is, only if these marks do not respect the indentation sequence.
