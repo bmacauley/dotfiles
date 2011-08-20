@@ -139,3 +139,6 @@
 [submodule "bundle/dbext"]
 	path = bundle/dbext
 	url = https://github.com/vim-scripts/dbext.vim.git
+[submodule "bundle/xptemplate"]
+	path = bundle/xptemplate
+	url = https://github.com/drmingdrmer/xptemplate.git
