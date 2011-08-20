@@ -63,7 +63,7 @@
 	url = https://github.com/vim-scripts/python_fold.git
 [submodule "bundle/sparkup"]
 	path = bundle/sparkup
-	url = https://github.com/sirshannon/sparkup.vim
+	url = https://github.com/rstacruz/sparkup.git
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = https://github.com/vim-scripts/ZenCoding.vim.git
