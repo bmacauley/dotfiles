@@ -5,7 +5,7 @@ Using Vim, Pathogen and Git
 Useful references:
 
 Turning Vim into a modern Python IDE
-http://sontek.net/turning-vim-into-a-modern-python-ide
+http://sontek.net/turningivim-into-a-modern-python-ide
 
 The Modern Vim Config with Pathogen
 http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
@@ -53,4 +53,12 @@ Switch to the `~/.vimfiles` directory, and fetch submodules:
     cd ~/.vim
     git submodule init
     git submodule update
+
+
+(6) update submodules
+
+git submodule update
+git submodule foreach git submodule update
+
+
 
