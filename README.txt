@@ -41,12 +41,11 @@ git push origin master
 
 (5) Installation:
 
-    git clone git://github.com/nelstrom/dotvim.git ~/.vim
+    git clone git://github.com/bmacauley/dotfiles.git ~/.vim
 
 Create symlinks:
 
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
+    ln -s ~/.vim/.vimrc ~/.vimrc
 
 Switch to the `~/.vimfiles` directory, and fetch submodules:
 
