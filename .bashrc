@@ -155,18 +155,5 @@ export PS1="\[\e]0;\w\a\]\n\[\e[1;31m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$"
  
  # directory shortcuts
  
-alias cdrive='cd /cygdrive/c/'
-alias edrive='cd /cygdrive/e/'
-# alias ddrive='cd /cygdrive/d/'
-# alias gdrive='cd /cygdrive/g/'
-alias desktop='cd /cygdrive/e/users/bmacauley/desktop'
-alias mydocs='cd /cygdrive/e/Users/bmacauley/Documents'
-# alias e='cygstart e
-
-
-export EC_HOME=/cygdrive/c/ec2
-export PATH=$PATH:$EC2_HOME
-export EC2_PRIVATE_KEY=/cygdrive/c/ec2/pk-JOUIPHTZWUFEOKTMKMHCWQQYBMGCDNWM.pem
-export EC2_CERT=/cygdrive/c/ec2/cert-JOUIPHTZWUFEOKTMKMHCWQQYBMGCDNWM.pem
 
 
