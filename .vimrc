@@ -37,7 +37,7 @@ set fileencodings=utf-8,latin1
 " setup Pathogen bundle support
 filetype off
 
-let g:pathogen_disabled = ['supertab', 'gist', 'dbext', 'makegreen', 'tagbar']  "disabled plugins
+let g:pathogen_disabled = [ 'gist', 'dbext', 'makegreen', 'tagbar']  "disabled plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " vim configuration
@@ -138,9 +138,9 @@ set scrolloff=3 " minimum lines to keep above and below cursor
 set foldenable  " auto fold code
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
-set spell spelllang=en_gb
-setlocal spell spelllang=en_gb
-
+set nospell spelllang=en_gb
+setlocal nospell spelllang=en_gb
+hi SpellBad     cterm=underline  ctermbg=235
 " }}}
 
 
@@ -220,7 +220,28 @@ map <leader>s? z=
 " }}}
 
 " NerdTree {{{
+map fc <Esc>:call CleanClose(1)
 
+map fq <Esc>:call CleanClose(0)
+
+
+function! CleanClose(tosave)
+    if (a:tosave == 1)
+            w!
+        endif
+        let todelbufNr = bufnr("%")
+        let newbufNr = bufnr("#")
+        if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
+                exe "b".newbufNr
+            else
+                    bnext
+                endif
+
+                if (bufnr("%") == todelbufNr)
+                        new
+                    endif
+                    exe "bd".todelbufNr
+                endfunction
 
 
 " }}}
