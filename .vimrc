@@ -64,6 +64,11 @@ autocmd!
 filetype plugin indent on " Automatically detect file types
 syntax on " syntax highlighting
 colorscheme molokai
+
+"set background=dark
+"let g:solarized_termcolors = 256
+"colorscheme solarized
+
 set history=1000 " Store a ton of history (default is 20)
 " remember all of these between sessions, but only 10 search terms; also
 " remember info for 10 files, but never any on removable disks, don't
