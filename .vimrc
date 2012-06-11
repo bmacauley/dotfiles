@@ -37,7 +37,7 @@ set fileencodings=utf-8,latin1
 " setup Pathogen bundle support
 filetype off
 
-let g:pathogen_disabled = [ 'gist', 'dbext', 'makegreen', 'command-t']  "disabled plugins
+let g:pathogen_disabled = [ 'gist', 'dbext', 'makegreen', 'command-t', 'yankring']  "disabled plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " vim configuration
@@ -285,6 +285,7 @@ map <Leader>ta <Plug>TaskList
 " Vim-Powerline{{{
 let g:Powerline_symbols = 'compatible'
 " }}}
+"
 
 " }}}
 
