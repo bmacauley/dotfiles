@@ -37,7 +37,7 @@ set fileencodings=utf-8,latin1
 " setup Pathogen bundle support
 filetype off
 
-let g:pathogen_disabled = [ 'gist', 'dbext', 'makegreen']  "disabled plugins
+let g:pathogen_disabled = [ 'gist', 'dbext', 'makegreen', 'command-t']  "disabled plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " vim configuration
