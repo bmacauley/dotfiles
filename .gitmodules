@@ -143,5 +143,5 @@
 	path = bundle/vim-powerline
     url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "bundles/vim-colors-solarized"]
-	path = bundles/vim-colors-solarized
+	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
