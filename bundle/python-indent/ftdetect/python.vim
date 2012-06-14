@@ -5,6 +5,8 @@ setlocal textwidth=80
 setlocal smarttab
 setlocal expandtab
 set nosmartindent
-"set colorcolumn=+1
-"highlight ColorColumn term=reverse ctermbg=7 guibg=LightGrey
 
+if exists('+colorcolumn')
+"    hi ColorColumn ctermbg=236 guibg=lightgrey
+    set cc=+1
+endif

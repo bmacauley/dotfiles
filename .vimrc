@@ -37,7 +37,7 @@ set fileencodings=utf-8,latin1
 " setup Pathogen bundle support
 filetype off
 
-let g:pathogen_disabled = [ 'gist', 'dbext', 'makegreen', 'command-t', 'yankring']  "disabled plugins
+let g:pathogen_disabled = [ 'gist', 'dbext', 'makegreen', 'command-t']  "disabled plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " vim configuration
@@ -91,11 +91,13 @@ set showcmd
 
 set lines=55
 set columns=110
-set guifont=Consolas:h10
 
-set guioptions+=b "set horizontal scrollbar on
-set guioptions-=m " Remove menu bar
-set guioptions-=T " Remove toolbar
+if has('gui_win32')
+    set guifont=Consolas:h10
+    set guioptions+=b "set horizontal scrollbar on
+    set guioptions-=m " Remove menu bar
+    set guioptions-=T " Remove toolbar
+endif
 
 set ruler "display ruler
 set number "display line numbers
@@ -157,7 +159,7 @@ set shiftwidth=4  " use indents of 4 spaces
 set expandtab " tabs are spaces, not tabs
 set tabstop=4 " an indentation every four columns
 set softtabstop=4 " let backspace delete indent
-
+hi ColorColumn ctermbg=236 guibg=lightgrey
 " }}}
 
 
@@ -285,7 +287,12 @@ map <Leader>ta <Plug>TaskList
 " Vim-Powerline{{{
 let g:Powerline_symbols = 'compatible'
 " }}}
+"Yankring {{{
 "
+
+let g:yankring_replace_n_nkey = '<Leader>p'
+let g:yankring_replace_n_pkey = '<Leader>n'
+"}}}
 
 " }}}
 
