@@ -43,13 +43,17 @@ call pathogen#helptags()
 " vim configuration
 "set guioptions-=T "disable tool bar
 
-set nobackup
-
 " Save Vim swp files to a temp directory
 "silent execute '!mkdir "'.$VIMRUNTIME.'/temp"'
 "silent execute '!del "'.$VIMRUNTIME.'/temp/*~"'
 "set backupdir=$TEMP//
 "set directory=$TEMP//
+silent execute '!mkdir .backup'
+silent execute '!del ~/backup/~* '
+set backupdir=~/.backup//
+set directory=~/.backup//
+
+
 
 
 
