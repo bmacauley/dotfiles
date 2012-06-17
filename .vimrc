@@ -37,7 +37,7 @@ set fileencodings=utf-8,latin1
 " setup Pathogen bundle support
 filetype off
 
-let g:pathogen_disabled = [ 'gist', 'dbext', 'makegreen', 'command-t']  "disabled plugins
+let g:pathogen_disabled = [ 'gist', 'dbext', 'makegreen', 'command-t', 'taglist', 'xptemplate' , 'piv']  "disabled plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " vim configuration
@@ -49,7 +49,7 @@ call pathogen#helptags()
 "set backupdir=$TEMP//
 "set directory=$TEMP//
 silent execute '!mkdir .backup'
-silent execute '!del ~/backup/~* '
+silent execute '!rm ~/.backup/* '
 set backupdir=~/.backup//
 set directory=~/.backup//
 
@@ -81,6 +81,7 @@ set history=1000 " Store a ton of history (default is 20)
 " buffer
 set viminfo=/10,'10,r/mnt/zip,r/mnt/floppy,f0,h,\"100
 set mouse=a " automatically enable mouse usage
+set ttymouse=xterm
 set shortmess+=filmnrxoOtT     " abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 " display the current mode and partially-typed commands in the status line:
@@ -217,24 +218,10 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-
-
-" }}}
-
-
-" => {{{Plugins
-
-" VCSCommand {{{
-
-"let b:VCSCommandMapPrefix=',v'
-"let b:VCSCommandVCSType='git'
-" }}}
-
-" NerdTree {{{
+" close buffers, but not the window or split window
 map fc <Esc>:call CleanClose(1)
 
 map fq <Esc>:call CleanClose(0)
-
 
 function! CleanClose(tosave)
     if (a:tosave == 1)
@@ -257,6 +244,21 @@ function! CleanClose(tosave)
 
 " }}}
 
+
+" => {{{Plugins
+
+
+"MiniBufExplorer {{{
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+"}}}
+
+" NerdTree {{{
+" use F10 to toggle NERDTree
+nnoremap <silent> <F10> :NERDTreeToggle<CR>
+" }}}
+
 " SuperTab {{{
 
 
@@ -269,28 +271,24 @@ function! CleanClose(tosave)
 
 " }}}
 
-" Fuzzyfinder {{{
+" Tagbar {{{
 
+" use F9 to toggle tagbar
+nnoremap <silent> <F9> :TagbarToggle<CR>
 
-
-" }}}
-
-" Command-T {{{
-
-
-
-" }}}
+"}}}
 
 " Tasklist {{{
 
 "change key map <leader> t conflicts with Command-T
 map <Leader>ta <Plug>TaskList
 
-
 " }}}
+
 " Vim-Powerline{{{
 let g:Powerline_symbols = 'compatible'
 " }}}
+
 "Yankring {{{
 "
 
