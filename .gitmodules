@@ -157,3 +157,6 @@
 [submodule "bundle/vimaddon-mw-utils"]
 	path = bundle/vimaddon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/vim-autoclose"]
+	path = bundle/vim-autoclose
+	url = git://github.com/Townk/vim-autoclose.git
