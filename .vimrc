@@ -247,6 +247,11 @@ function! CleanClose(tosave)
 
 " => {{{Plugins
 
+" Ack {{{
+
+let g:ackprg = 'ack-grep'
+
+" }}}
 
 "MiniBufExplorer {{{
 let g:miniBufExplMapWindowNavArrows = 1
