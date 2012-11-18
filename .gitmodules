@@ -160,6 +160,6 @@
 [submodule "bundle/vim-autoclose"]
 	path = bundle/vim-autoclose
 	url = git://github.com/Townk/vim-autoclose.git
-[submodule "bundle/nginx"]
-	path = bundle/nginx
-	url = git://github.com/andersjanmyr/nginx-vim-syntax.git
+[submodule "bundle/nginx-vim-syntax"]
+	path = bundle/nginx-vim-syntax
+	url = git://github.com/evanmiller/nginx-vim-syntax.git
