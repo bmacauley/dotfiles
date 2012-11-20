@@ -56,9 +56,7 @@ Switch to the `~/.vimfiles` directory, and fetch submodules:
 
 (6) update submodules
 
-git submodule update
-git submodule foreach git submodule update
-
+git submodule foreach git pull origin master
 
 (7) delete submodules
 
