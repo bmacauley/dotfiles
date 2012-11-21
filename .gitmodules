@@ -163,3 +163,6 @@
 [submodule "bundle/nginx-vim-syntax"]
 	path = bundle/nginx-vim-syntax
 	url = git://github.com/evanmiller/nginx-vim-syntax.git
+[submodule "bundle/showmarks"]
+	path = bundle/showmarks
+	url = git://github.com/vim-scripts/ShowMarks.git
