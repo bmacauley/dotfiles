@@ -154,3 +154,6 @@
 [submodule "bundle/showmarks"]
 	path = bundle/showmarks
 	url = git://github.com/vim-scripts/ShowMarks.git
+[submodule "bundle/colour-sampler"]
+	path = bundle/colour-sampler
+	url = git://github.com/vim-scripts/Colour-Sampler-Pack.git
