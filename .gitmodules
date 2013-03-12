@@ -100,9 +100,6 @@
 [submodule "bundle/sessionman"]
 	path = bundle/sessionman
 	url = https://github.com/vim-scripts/sessionman.vim.git
-[submodule "bundle/vimwiki"]
-	path = bundle/vimwiki
-	url = https://github.com/vim-scripts/vimwiki.git
 [submodule "bundle/yaml"]
 	path = bundle/yaml
 	url = https://github.com/vim-scripts/yaml.vim.git
