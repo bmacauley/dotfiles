@@ -40,6 +40,7 @@ filetype off
 let g:pathogen_disabled = [ 'dbext', 'makegreen', 'command-t', 'taglist', 'xptemplate' , 'piv']  "disabled plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+call pathogen#infect()
 " vim configuration
 "set guioptions-=T "disable tool bar
 
@@ -48,7 +49,7 @@ call pathogen#helptags()
 "silent execute '!del "'.$VIMRUNTIME.'/temp/*~"'
 "set backupdir=$TEMP//
 "set directory=$TEMP//
-silent execute '!mkdir .backup'
+silent execute '!mkdir ~/.backup'
 silent execute '!rm ~/.backup/* '
 set backupdir=~/.backup//
 set directory=~/.backup//
