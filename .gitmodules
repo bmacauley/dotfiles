@@ -49,9 +49,6 @@
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = https://github.com/vim-scripts/ZenCoding.vim.git
-[submodule "bundle/vcscommand"]
-	path = bundle/vcscommand
-	url = https://github.com/vim-scripts/vcscommand.vim.git
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = https://github.com/tpope/vim-markdown.git
