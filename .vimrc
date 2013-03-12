@@ -291,7 +291,8 @@ map <Leader>ta <Plug>TaskList
 " }}}
 
 " Vim-Powerline{{{
-let g:Powerline_symbols = 'compatible'
+" options: compatible, fancy
+let g:Powerline_symbols = 'fancy'
 " }}}
 
 "Yankring {{{
