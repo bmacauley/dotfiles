@@ -70,9 +70,6 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/tsaleh/vim-matchit.git
-[submodule "bundle/piv"]
-	path = bundle/piv
-	url = https://github.com/spf13/PIV.git
 [submodule "bundle/xml"]
 	path = bundle/xml
 	url = https://github.com/othree/xml.vim.git
