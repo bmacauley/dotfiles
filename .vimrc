@@ -37,7 +37,7 @@ set fileencodings=utf-8,latin1
 " setup Pathogen bundle support
 filetype off
 
-let g:pathogen_disabled = [ 'dbext', 'makegreen', 'command-t', 'taglist', 'xptemplate' , 'piv']  "disabled plugins
+let g:pathogen_disabled = [ 'python-fold','dbext', 'makegreen', 'command-t', 'taglist', 'xptemplate' , 'piv']  "disabled plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 call pathogen#infect()
@@ -148,7 +148,7 @@ set backspace=indent,eol,start	" backspace for dummy
 "set linespace=0 " No extra spaces between rows
 set scrolljump=5 " lines to scroll when cursor leaves screen
 set scrolloff=3 " minimum lines to keep above and below cursor
-set foldenable  " auto fold code
+" set fold code "python-fold config
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 set nospell spelllang=en_gb

@@ -37,9 +37,6 @@
 [submodule "bundle/simplefold"]
 	path = bundle/simplefold
 	url = https://github.com/pangloss/vim-simplefold.git
-[submodule "bundle/python-fold"]
-	path = bundle/python-fold
-	url = https://github.com/vim-scripts/python_fold.git
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = https://github.com/vim-scripts/ZenCoding.vim.git
