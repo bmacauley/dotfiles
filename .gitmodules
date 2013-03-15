@@ -145,3 +145,6 @@
 [submodule "bundle/indentline"]
 	path = bundle/indentline
 	url = git://github.com/Yggdroot/indentLine.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
