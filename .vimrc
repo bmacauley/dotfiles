@@ -299,7 +299,7 @@ let g:yankring_replace_n_pkey = '<Leader>n'
 "}}}
 
 "Syntastic {{{
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open=0
 let g:syntastic_python_checker="flake8"
 
 "}}}
@@ -313,7 +313,6 @@ hi IndentGuidesOdd  ctermbg=234
 hi IndentGuidesEven ctermbg=235
 
 "}}}
-za
 "IndentLines{{{
 "Vim7.3 or greater
 " indent chars: ¦ │
@@ -321,6 +320,5 @@ let g:indentLine_char = '¦'
 let g:indentLine_color_term = 238
 
 "}}}
-za
 " }}}
 
