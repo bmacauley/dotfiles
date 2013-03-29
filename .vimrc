@@ -300,14 +300,23 @@ let g:yankring_replace_n_pkey = '<Leader>n'
 "}}}
 "
 "Syntastic {{{
+<<<<<<< HEAD
 "
 let g:syntastic_check_on_open=1
+=======
+
+let g:syntastic_check_on_open=0
+>>>>>>> c6552c822829ecee92285eb9bbaf92a546d557e0
 let g:syntastic_python_checker="flake8"
 
 "}}}
 
 "vim-indent-guides {{{
+<<<<<<< HEAD
 "
+=======
+
+>>>>>>> c6552c822829ecee92285eb9bbaf92a546d557e0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 "Molokai
@@ -317,12 +326,15 @@ hi IndentGuidesEven ctermbg=235
 
 "}}}
 "IndentLines{{{
+
 "Vim7.3 or greater
+let g:indentLine_enabled = 0
 " indent chars: ¦ │
 let g:indentLine_char = '¦'
 let g:indentLine_color_term = 238
 
 "}}}
+<<<<<<< HEAD
 
 "UltiSnips{{{
 "
@@ -337,5 +349,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 
+=======
+>>>>>>> c6552c822829ecee92285eb9bbaf92a546d557e0
 " }}}
 
