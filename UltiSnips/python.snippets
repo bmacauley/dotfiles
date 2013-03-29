@@ -1,0 +1,138 @@
+#Python snippets
+
+
+###########################
+# script skeletons
+###########################
+
+snippet skel_script "create a skeleton for a script" !b
+#!/usr/bin/env python
+# encoding: utf-8
+
+
+#libs
+import os
+import sys
+import traceback
+import time
+import logging
+
+
+
+# set up logging
+logger = logging.getLogger('main')
+logger.setLevel(logging.DEBUG)
+
+# Use file output for production logging:
+filename, fileextension = os.path.splitext(sys.argv[0])
+# log file name  <script name>.log
+log_file =  '{0}.log'.format(filename)
+filelog = logging.FileHandler(log_file, 'a')
+filelog.setLevel(logging.INFO)
+
+# Use console for development logging:
+conlog = logging.StreamHandler()
+conlog.setLevel(logging.DEBUG)
+
+# Specify log formatting:
+#formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(module)s - %(lineno)s - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(module)s - %(lineno)s - %(levelname)s - %(message)s')
+conlog.setFormatter(formatter)
+filelog.setFormatter(formatter)
+
+# add console and filelog to logger
+logger.addHandler(conlog)
+logger.addHandler(filelog)
+
+
+
+#global variables
+
+
+#classes
+
+
+#functions
+
+
+
+def main():
+
+    print "Hello world!"
+
+
+
+
+
+
+if __name__ == '__main__':
+    try:
+        start_time = time.time()
+        main()
+        elapsed_time = (time.time() - start_time)
+        # write elapsed time message in logs
+        logger.info("COMPLETE-->Elapsed Time: "+ str(elapsed_time)+" seconds")
+        sys.exit(0)
+
+    except KeyboardInterrupt, e: #ctrl-c
+        raise e
+    except SystemExit, e: #sys.exit()
+        raise e
+    except Exception, e:
+        logger.error('Error, unexpected exception')
+        logger.error(str(e))
+        traceback.print_exc()
+        os._exit(1)
+
+endsnippet
+
+
+snippet skel_module "skeleton for a module" !b
+#!/usr/bin/env python
+# encoding: utf-8
+
+"""
+package.module
+~~~~~~~~~~~~~~
+
+A description which can be long and explain the complete
+functionality of this module even with indented code examples.
+Class/Function however should not be documented here.
+ 
+ :copyright: year by my name, see AUTHORS for more details
+ :license: license_name, see LICENSE for more details
+"""
+
+endsnippet
+
+
+
+#########################
+# setup.py
+#########################
+
+
+
+snippet skel_setup.py  "create a skeleton for setup.py"  !b 
+try:
+    from setuptools import setup
+except: ImportError:
+    from distutils.core import setup
+
+setup(
+    name='',
+    version='',
+    description='',
+    author='',
+    author_email='',
+    url='',
+    download_url='',
+    packages=[],
+    install_requires=[],
+)
+endsnippet
+
+
+###########################
+# fabric
+###########################

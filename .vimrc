@@ -255,12 +255,14 @@ let g:ackprg = 'ack-grep'
 " }}}
 
 "MiniBufExplorer {{{
+"
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 "}}}
 
 " NerdTree {{{
+"
 " use F10 to toggle NERDTree
 nnoremap <silent> <F10> :NERDTreeToggle<CR>
 " }}}
@@ -270,7 +272,6 @@ nnoremap <silent> <F10> :NERDTreeToggle<CR>
 
 
 " }}}
-
 
 " Tagbar {{{
 
@@ -287,24 +288,26 @@ map <Leader>ta <Plug>TaskList
 " }}}
 
 " Vim-Powerline{{{
+"
 " options: compatible, fancy
 let g:Powerline_symbols = 'fancy'
 " }}}
 
 "Yankring {{{
 "
-
 let g:yankring_replace_n_nkey = '<Leader>p'
 let g:yankring_replace_n_pkey = '<Leader>n'
 "}}}
-
+"
 "Syntastic {{{
+"
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checker="flake8"
 
 "}}}
 
 "vim-indent-guides {{{
+"
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 "Molokai
@@ -313,7 +316,6 @@ hi IndentGuidesOdd  ctermbg=234
 hi IndentGuidesEven ctermbg=235
 
 "}}}
-za
 "IndentLines{{{
 "Vim7.3 or greater
 " indent chars: ¦ │
@@ -321,6 +323,19 @@ let g:indentLine_char = '¦'
 let g:indentLine_color_term = 238
 
 "}}}
-za
+
+"UltiSnips{{{
+"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+let g:UltiSnipsEditSplit="vertical"
+"}}}
+
+
+
+
 " }}}
 
