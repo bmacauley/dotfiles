@@ -48,7 +48,7 @@
 	url = https://github.com/tomtom/tcomment_vim.git
 [submodule "bundle/rails"]
 	path = bundle/rails
-	url = http://github.com/tpope/vim-rails.git
+	url = https://github.com/tpope/vim-rails.git
 [submodule "bundle/ruby"]
 	path = bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
