@@ -20,9 +20,9 @@ export HISTSIZE=10000
 shopt -s histappend
 
  #Postgresql environment
-export PGLIB=/usr/pgsql-9.2/lib
-export PGDATA=/var/lib/pgsql/9.2/data
-PATH=$PATH:/usr/pgsql-9.2/bin
+#export PGLIB=/usr/pgsql-9.2/lib
+#export PGDATA=/var/lib/pgsql/9.2/data
+#PATH=$PATH:/usr/pgsql-9.2/bin
 
 #EDITOR
 export EDITOR=/usr/bin/vim
@@ -30,19 +30,22 @@ export EDITOR=/usr/bin/vim
 # Mysql environment
 
 # Oracle environment
-export TNS_ADMIN=/etc
-export ORACLE_HOME=/usr/lib/oracle/11.2
-export LD_LIBRARY_PATH=$ORACLE_HOME/client64/lib
-PATH=$PATH:$HOME/bin:/sbin:$ORACLE_HOME/client64/bin
+#export TNS_ADMIN=/etc
+#export ORACLE_HOME=/usr/lib/oracle/11.2
+#export LD_LIBRARY_PATH=$ORACLE_HOME/client64/lib
+#PATH=$PATH:$HOME/bin:/sbin:$ORACLE_HOME/client64/bin
 
 # python virtualenv
 
 #activate virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
+#export WORKON_HOME=$HOME/.virtualenvs
 #source /home/bmacauley/.virtualenvs/python2.7/bin/virtualenvwrapper.sh
-source /usr/bin/virtualenvwrapper.sh
+#source /usr/bin/virtualenvwrapper.sh
 
 
 #activate python2.7 virtualenv
 #source ~/.virtualenvs/python2.7/bin/activate
+
+
+#eval 'keychain --eval id_rsa'
 
