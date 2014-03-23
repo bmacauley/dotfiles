@@ -67,9 +67,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "bundle/matchit"]
-	path = bundle/matchit
-	url = https://github.com/tsaleh/vim-matchit.git
 [submodule "bundle/xml"]
 	path = bundle/xml
 	url = https://github.com/othree/xml.vim.git
