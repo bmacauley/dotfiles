@@ -41,7 +41,7 @@ git push origin master
 
 (5) Installation:
 
-    git clone git://github.com/bmacauley/dotfiles.git ~/.vim
+    git clone git@github.com:bmacauley/dotfiles.git ~/.vim
 
 Create symlinks:
 
