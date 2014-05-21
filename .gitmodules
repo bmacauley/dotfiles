@@ -142,6 +142,3 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "bundle/docker"]
-	path = bundle/docker
-	url = https://github.com/dotcloud/docker.git
