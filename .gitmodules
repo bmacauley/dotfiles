@@ -28,3 +28,21 @@
 [submodule "vim-yankring"]
 	path = vim-yankring
 	url = https://github.com/richleland/vim-yankring.git
+[submodule ".vim/bundle/simplefold"]
+	path = .vim/bundle/simplefold
+	url = https://github.com/pangloss/vim-simplefold.git
+[submodule ".vim/bundle/emmet"]
+	path = .vim/bundle/emmet
+	url = http://github.com/mattn/emmet-vim/
+[submodule ".vim/bundle/markdown"]
+	path = .vim/bundle/markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule ".vim/bundle/tcomment"]
+	path = .vim/bundle/tcomment
+	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "rails"]
+	path = rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "ruby"]
+	path = ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
