@@ -124,3 +124,6 @@
 [submodule ".vim/bundle/docker"]
 	path = .vim/bundle/docker
 	url = https://github.com/honza/dockerfile.vim.git
+[submodule ".vim/bundle/colour-sampler"]
+	path = .vim/bundle/colour-sampler
+	url = https://github.com/vim-scripts/Colour-Sampler-Pack.git
