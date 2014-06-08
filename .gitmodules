@@ -25,9 +25,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
-[submodule "vim-yankring"]
-	path = vim-yankring
-	url = https://github.com/richleland/vim-yankring.git
 [submodule ".vim/bundle/simplefold"]
 	path = .vim/bundle/simplefold
 	url = https://github.com/pangloss/vim-simplefold.git
@@ -40,9 +37,6 @@
 [submodule ".vim/bundle/tcomment"]
 	path = .vim/bundle/tcomment
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "rails"]
-	path = rails
-	url = https://github.com/tpope/vim-rails.git
-[submodule "ruby"]
-	path = ruby
-	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule ".vim/bundle/jquery"]
+	path = .vim/bundle/jquery
+	url = https://github.com/itspriddle/vim-jquery.git
