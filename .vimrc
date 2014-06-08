@@ -37,7 +37,7 @@ set fileencodings=utf-8,latin1
 " setup Pathogen bundle support
 filetype off
 
-let g:pathogen_disabled = [ 'python-fold','dbext', 'makegreen', 'command-t', 'taglist', 'xptemplate' , 'piv']  "disabled plugins
+let g:pathogen_disabled = [ 'python-fold',  'taglist', 'showmarks']  "disabled plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 call pathogen#infect()
