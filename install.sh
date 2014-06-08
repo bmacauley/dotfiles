@@ -29,7 +29,8 @@ lnif $dotfiles/.bashrc $HOME/.bashrc
 
 # vim
 echo "Setting up vim..."
-lnif $dotfiles/.vimrc $HOME/.bashrc 
+lnif $dotfiles/.vimrc $HOME/.vimrc
+lnif $dotfiles/.vim $HOME/.vim
 
 # tmux
 echo "Setting up tmux..."
