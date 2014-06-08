@@ -40,3 +40,15 @@
 [submodule ".vim/bundle/jquery"]
 	path = .vim/bundle/jquery
 	url = https://github.com/itspriddle/vim-jquery.git
+[submodule ".vim/bundle/gist"]
+	path = .vim/bundle/gist
+	url = https://github.com/vim-scripts/Gist.vim.git
+[submodule ".vim/bundle/ruby"]
+	path = .vim/bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule ".vim/bundle/rails"]
+	path = .vim/bundle/rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule ".vim/bundle/yankring"]
+	path = .vim/bundle/yankring
+	url = https://github.com/richleland/vim-yankring.git
