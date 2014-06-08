@@ -52,3 +52,27 @@
 [submodule ".vim/bundle/yankring"]
 	path = .vim/bundle/yankring
 	url = https://github.com/richleland/vim-yankring.git
+[submodule ".vim/bundle/repeat"]
+	path = .vim/bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule ".vim/bundle/taglist"]
+	path = .vim/bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule ".vim/bundle/l9"]
+	path = .vim/bundle/l9
+	url = https://github.com/vim-scripts/L9.git
+[submodule ".vim/bundle/ragtag"]
+	path = .vim/bundle/ragtag
+	url = https://github.com/tpope/vim-ragtag.git
+[submodule ".vim/bundle/yaml"]
+	path = .vim/bundle/yaml
+	url = https://github.com/vim-scripts/yaml.vim.git
+[submodule ".vim/bundle/minibufexpl"]
+	path = .vim/bundle/minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule ".vim/bundle/powerline"]
+	path = .vim/bundle/powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
