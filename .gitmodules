@@ -145,3 +145,6 @@
 [submodule "bundle/docker"]
 	path = .vim/bundle/docker
 	url = https://github.com/honza/dockerfile.vim.git
+[submodule "vim/bundle/pathogen"]
+	path = vim/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
