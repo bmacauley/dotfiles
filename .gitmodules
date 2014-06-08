@@ -100,9 +100,6 @@
 [submodule ".vim/bundle/showmarks"]
 	path = .vim/bundle/showmarks
 	url = https://github.com/vim-scripts/ShowMarks.git
-[submodule ".vim/bundle/colour-sampler"]
-	path = .vim/bundle/colour-sampler
-	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
 [submodule ".vim/bundle/flake8"]
 	path = .vim/bundle/flake8
 	url = https://github.com/nvie/vim-flake8.git
