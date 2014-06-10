@@ -144,7 +144,12 @@ export PS1="\[\e]0;\w\a\]\n\[\e[1;31m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$"
  alias grep='grep --color'                     # show differences in colour
 
 # Some shortcuts for different directory listings
- alias ls='ls -hF --color=tty'                 # classify files in colour
+if [ "$(uname)" == "Darwin" ]; then
+    alias ls='ls -G'
+else  
+	alias ls='ls -hF --color=tty'
+fi 
+ alias ls='ls -hF --color=tty'                 
  alias dir='ls --color=auto --format=vertical'
  alias vdir='ls --color=auto --format=long'
  alias ll='ls -l'                              # long list
