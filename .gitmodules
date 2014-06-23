@@ -124,3 +124,6 @@
 [submodule ".vim/bundle/colour-sampler"]
 	path = .vim/bundle/colour-sampler
 	url = https://github.com/vim-scripts/Colour-Sampler-Pack.git
+[submodule ".vim/bundle/emmet"]
+	path = .vim/bundle/emmet
+	url = https://github.com/mattn/emmet-vim.git
