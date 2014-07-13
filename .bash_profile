@@ -38,13 +38,13 @@ export EDITOR=/usr/bin/vim
 # python virtualenv
 
 #activate virtualenvwrapper
-#export WORKON_HOME=$HOME/.virtualenvs
-#source /home/bmacauley/.virtualenvs/python2.7/bin/virtualenvwrapper.sh
-#source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+source /home/bmacauley/.virtualenvs/python2.7/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 
 #activate python2.7 virtualenv
-#source ~/.virtualenvs/python2.7/bin/activate
+source ~/.virtualenvs/python2.7/bin/activate
 
 
 #eval 'keychain --eval id_rsa'

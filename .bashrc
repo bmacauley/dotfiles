@@ -148,8 +148,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias ls='ls -G'
 else  
 	alias ls='ls -hF --color=tty'
-fi 
- alias ls='ls -hF --color=tty'                 
+fi                
  alias dir='ls --color=auto --format=vertical'
  alias vdir='ls --color=auto --format=long'
  alias ll='ls -l'                              # long list
