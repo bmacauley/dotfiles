@@ -14,10 +14,10 @@ function lnif() {
 
 
 if [ ! -e $dotfiles/.git ]; then
-    echo "Cloning dotfiles\n"
+    echo "Cloning dotfiles...\n"
     git clone https://github.com/bmacauley/dotfiles.git $dotfiles
 else
-    echo "Updating dotfilesi"
+    echo "Updating dotfiles..."
     cd $dotfiles && git pull
 fi
 
