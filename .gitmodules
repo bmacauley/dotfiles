@@ -127,3 +127,6 @@
 [submodule ".vim/bundle/emmet"]
 	path = .vim/bundle/emmet
 	url = https://github.com/mattn/emmet-vim.git
+[submodule ".vim/bundle/ansible-yaml"]
+	path = .vim/bundle/ansible-yaml
+	url = https://github.com/chase/vim-ansible-yaml.git
