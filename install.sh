@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # dotfiles install script
 dotfiles="$HOME/.dotfiles"
 

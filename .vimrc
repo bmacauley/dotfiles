@@ -82,7 +82,7 @@ set history=1000 " Store a ton of history (default is 20)
 " buffer
 set viminfo=/10,'10,r/mnt/zip,r/mnt/floppy,f0,h,\"100
 set mouse=a " automatically enable mouse usage
-set ttymouse=xterm
+set ttymouse=xterm2
 set shortmess+=filmnrxoOtT     " abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 " display the current mode and partially-typed commands in the status line:
