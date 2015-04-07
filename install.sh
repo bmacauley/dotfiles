@@ -37,6 +37,8 @@ echo "Setting up tmux..."
 lnif $dotfiles/.tmux.conf $HOME/.tmux.conf
 
 #vim modules
+echo "Installing vundle module..."
+git clone https://github.com/gmarik/Vundle.vim.git $dotfiles/.vim/bundle/Vundle.vim
 echo "Installing vim modules..."
 vim +PluginInstall +qall
 
