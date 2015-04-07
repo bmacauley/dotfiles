@@ -38,7 +38,5 @@ lnif $dotfiles/.tmux.conf $HOME/.tmux.conf
 
 #vim modules
 echo "Installing vim modules..."
-git submodule init $dotfiles
-git submodule update $dotfiles
-
+vim +PluginInstall +qall
 
