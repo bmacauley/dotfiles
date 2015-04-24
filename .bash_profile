@@ -39,13 +39,11 @@ export EDITOR=/usr/bin/vim
 
 #activate virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-source /home/bmacauley/.virtualenvs/python2.7/bin/virtualenvwrapper.sh
-source /usr/bin/virtualenvwrapper.sh
 
-
-#activate python2.7 virtualenv
-source ~/.virtualenvs/python2.7/bin/activate
-
-
-#eval 'keychain --eval id_rsa'
+if [ "$(uname)"] == "Darwin" ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    source /usr/bin/virtualenvwrapper.sh
+elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW32_NT" ]; then
+    source /usr/bin/virtualenvwrapper.sh
 
