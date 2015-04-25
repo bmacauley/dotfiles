@@ -16,7 +16,7 @@ export PATH
 export HISTCONTROL=erasedups
 #set history size
 export HISTSIZE=10000
-#when a shell session exits, apend history to .bash_history
+#when a shell session exits, append history to .bash_history
 shopt -s histappend
 
  #Postgresql environment
@@ -40,10 +40,10 @@ export EDITOR=/usr/bin/vim
 #activate virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 
-if [ "$(uname)"] == "Darwin" ]; then
+if [ "$(uname)" == "Darwin" ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     source /usr/bin/virtualenvwrapper.sh
-elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW32_NT" ]; then
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
