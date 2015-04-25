@@ -46,4 +46,4 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     source /usr/bin/virtualenvwrapper.sh
 elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW32_NT" ]; then
     source /usr/bin/virtualenvwrapper.sh
-
+fi
