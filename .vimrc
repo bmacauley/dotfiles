@@ -341,7 +341,7 @@ autocmd!
 
 filetype plugin indent on " Automatically detect file types
 syntax enable " syntax highlighting
-colorscheme molokai
+silent! colorscheme molokai
 
 "set background=dark
 "let g:solarized_termcolors = 256
