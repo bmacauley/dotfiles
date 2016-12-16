@@ -1,0 +1,48 @@
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Packages #
+############
+*.tar
+*.tar.*
+*.jar
+*.exe
+*.msi
+*.zip
+*.tgz
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.tmp*
+*.so
+*.egg
+*.egg-info
+
+
+
+# npm & bower
+bower_components
+node_modules
+npm-debug.log
+
+# IDEs stuff
+.idea
