@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+#==============================================
+#
+# .exports
+#
+#==============================================
+
+
+#  Bash history config
+#---------------------
+
+
+# .bash_history configuration
+# erase duplicates
+export HISTCONTROL=erasedups
+
+# Increase Bash history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL='ignoreboth';
+
+
+
+
+#when a shell session exits, append history to .bash_history
+shopt -s histappend
+
+
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend;
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell;
+
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar; do
+	shopt -s "$option" 2> /dev/null;
+done;
+
+
+# default editor
+#-------------------
+export EDITOR=/usr/bin/vim
+
+
+# Python virtualenv
+# activate virtualenvwrapper
+#-------------------
+export WORKON_HOME=$HOME/.virtualenvs
+
+if [ "$(uname)" == "Darwin" ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    source /usr/bin/virtualenvwrapper.sh
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+    source /usr/bin/virtualenvwrapper.sh
+fi
+
+
+# Ruby configuration
+#--------------------
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
+# Go configuration
+#--------------------
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
+
+
+# Postgresql config
+#-------------------
+
+
+
+# Mysql config
+#-------------------
+
+
+# Oracle config
+#-------------------

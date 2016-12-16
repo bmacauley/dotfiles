@@ -1,15 +1,39 @@
 #!/usr/bin/env bash
 
+#========================================
+#
+# Aliases
+#
+#========================================
+
+
+ # Interactive operation...
+ alias rm='rm -i'
+ alias cp='cp -i'
+ alias mv='mv -i'
+
+ # Default to human readable figures
+ alias df='df -h'
+ alias du='du -h'
+
+# Some shortcuts for different directory listings
+if [ "$(uname)" == "Darwin" ]; then
+    alias ls='ls -G'
+else  
+	alias ls='ls -hF --color=tty'
+fi
+
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
+alias 3.="cd ../../.."
+alias 4.="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
