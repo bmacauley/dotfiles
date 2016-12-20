@@ -5,15 +5,18 @@
 #=================================================
 
 
+# Requirements
+# - iterm2 + monokai_bmacauley.itermcolors
+# - bash-git-prompt + monakai-bmacauley.bgptheme
 
 
-#------------------------------------------------------------------------
-# Standard prompt with monokai theme
+# Standard prompt - non-git directories
+# 
 # - root prompt warning
 # - based on Steve Losh zsh prompt
 #   http://stevelosh.com/blog/2009/03/candy-colored-terminal/
 #   http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
-# ----------------------------------------------------------------------
+
 
 # colours
 WHITE=$'\e[37;40m'
@@ -22,10 +25,6 @@ GREEN=$'\e[32;40m'
 ORANGE=$'\e[33;40m'
 BLUE=$'\e[34;40m'
 RESET=$'\e[33;0m'
-
-Time12a="\$(date +%H:%M %p)"
-
-
 
 # check if root, display /!!!\ warning in prompt
 if [[ ${EUID} == 0 ]] ; then
@@ -38,33 +37,25 @@ fi
 
 
 
-
-
-#------------------------------------------------------------------------
-# magicmonty/bash-git-prompt
+# Git prompt - git controlled directories
+# 
+# based on magicmonty/bash-git-prompt
 # https://github.com/magicmonty/bash-git-prompt
-#  - using bmacauley.bgptheme, matching monokai standard promt theme
-#------------------------------------------------------------------------
+# 
 
 
-# git prompt
+
 GIT_PROMPT_ONLY_IN_REPO=1
-
-   # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
-
-   # GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
-   # GIT_PROMPT_SHOW_UNTRACKED_FILES=all # can be no, normal or all; determines counting of untracked files
-
-   # GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
-
-   # GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
-
-    #GIT_PROMPT_START= \[    # uncomment for custom prompt start sequence
-    #GIT_PROMPT_END=\]      # uncomment for custom prompt end sequence
-
-   # as last entry source the gitprompt script
-   # GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
-   # GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
+# GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
+# GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
+# GIT_PROMPT_SHOW_UNTRACKED_FILES=all # can be no, normal or all; determines counting of untracked files
+# GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
+# GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
+# GIT_PROMPT_START= \[    # uncomment for custom prompt start sequence
+# GIT_PROMPT_END=\]      # uncomment for custom prompt end sequence
+# as last entry source the gitprompt script
+# GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
+# GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
    GIT_PROMPT_THEME=bmacauley # use theme optimized for solarized color scheme
    source ~/.bash-git-prompt/gitprompt.sh
 

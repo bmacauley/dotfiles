@@ -1,0 +1,14 @@
+# check if root, display /!!!\ warning in prompt
+
+
+
+NEWLINE=$'\n'
+CLOCK=$'[%t] '
+BATTERY=`battery | sed 's/%/%%/'`
+if [[ ${EUID} == 0 ]]; then
+  PROMPT='$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $fg[red]/!!!\ # ' 
+else
+  PROMPT='${CLOCK}${BATTERY}${NEWLINE}$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $ ' RPROMPT=''
+fi
+
+source /usr/local/Cellar/zsh-git-prompt/0.5/zshrc.sh

@@ -4,7 +4,10 @@
 #
 #==============================================
 
-# Get the aliases and functions
+export PATH="$HOME/bin:$PATH";
+
+
+
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
@@ -18,45 +21,23 @@ done;
 unset file;
 
 
-# User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin
-
-export PATH
-
-# .bash_history configuration
-#erase duplicates
-export HISTCONTROL=erasedups
-#set history size
-export HISTSIZE=10000
 #when a shell session exits, append history to .bash_history
 shopt -s histappend
 
- #Postgresql environment
-#export PGLIB=/usr/pgsql-9.2/lib
-#export PGDATA=/var/lib/pgsql/9.2/data
-#PATH=$PATH:/usr/pgsql-9.2/bin
 
-#EDITOR
-export EDITOR=/usr/bin/vim
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
 
-# Mysql environment
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend;
 
-# Oracle environment
-#export TNS_ADMIN=/etc
-#export ORACLE_HOME=/usr/lib/oracle/11.2
-#export LD_LIBRARY_PATH=$ORACLE_HOME/client64/lib
-#PATH=$PATH:$HOME/bin:/sbin:$ORACLE_HOME/client64/bin
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell;
 
-# python virtualenv
-
-#activate virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-
-if [ "$(uname)" == "Darwin" ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    source /usr/bin/virtualenvwrapper.sh
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
-    source /usr/bin/virtualenvwrapper.sh
-fi
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar; do
+	shopt -s "$option" 2> /dev/null;
+done;

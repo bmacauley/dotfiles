@@ -27,8 +27,8 @@ fi
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
-alias 3.="cd ../../.."
-alias 4.="cd ../../../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
