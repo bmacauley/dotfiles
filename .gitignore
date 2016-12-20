@@ -1,12 +1,32 @@
+#==================
+# Global .gitignores
+#==================
 
-# Logs and databases #
-######################
-*.log
+
+# keys/certs
+#-------------
+*.crt
+*.csr
+*.key
+*.pub
+*.pem
+
+
+
+# Logs and databases 
+#---------------------
 *.sql
 *.sqlite
+*.swp
+logs
+crash.log
+*.log
 
-# Packages #
-############
+
+
+
+# Packages 
+#------------
 *.tar
 *.tar.*
 *.jar
@@ -16,8 +36,8 @@
 *.tgz
 
 
-# OS generated files #
-######################
+# OS generated files 
+#--------------------
 .DS_Store
 .DS_Store?
 ._*
@@ -30,6 +50,7 @@ Desktop.ini
 
 
 # Compiled Python files
+#-----------------------
 *.pyc
 *.pyo
 *.tmp*
@@ -38,11 +59,12 @@ Desktop.ini
 *.egg-info
 
 
-
 # npm & bower
+#------------
 bower_components
 node_modules
 npm-debug.log
 
 # IDEs stuff
+#-----------
 .idea

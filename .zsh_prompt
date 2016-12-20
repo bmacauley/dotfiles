@@ -1,14 +1,43 @@
-# check if root, display /!!!\ warning in prompt
+#!/usr/bin/env zsh
+#=================
+# zsh_prompt
+#=================
 
 
+# Requirements:
+#----------------
+# - iterm2 + monokai_bmacauley.itermcolors
+# - zsh-git-prompt + monakai-bmacauley.bgptheme
+
+
+
+
+# Git prompt displays standard prompt plus git information
+#----------------------------------------------------------
+# based on magicmonty/bash-git-prompt
+# https://github.com/magicmonty/bash-git-prompt
+source /usr/local/Cellar/zsh-git-prompt/0.5/zshrc.sh
+
+
+
+
+# Standard prompt for non-git directories
+#-----------------------------------------
+# - uses functions from zsh-git-prompt/
+# - clock
+# - battery indicator
+# - root prompt warning
+# - based on Steve Losh zsh prompt
+#   http://stevelosh.com/blog/2009/03/candy-colored-terminal/
+#   http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
 
 NEWLINE=$'\n'
 CLOCK=$'[%t] '
-BATTERY=`battery | sed 's/%/%%/'`
+BATTERY=`battery -a -p| sed 's/%/%%/'`
 if [[ ${EUID} == 0 ]]; then
-  PROMPT='$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $fg[red]/!!!\ # ' 
+  PROMPT='${CLOCK}${BATTERY}${NEWLINE}$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $fg[red]/!!!\ # ' 
 else
-  PROMPT='${CLOCK}${BATTERY}${NEWLINE}$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $ ' RPROMPT=''
+  PROMPT='${CLOCK}${BATTERY}${NEWLINE}$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $ ' 
 fi
 
-source /usr/local/Cellar/zsh-git-prompt/0.5/zshrc.sh
+

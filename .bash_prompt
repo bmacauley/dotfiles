@@ -1,17 +1,19 @@
-#=================================================
-#
-# .bash_prompt
-#
-#=================================================
+#=============
+#=============
+# Bash prompt 
+#=============
 
 
-# Requirements
+# Requirements:
+#----------------
 # - iterm2 + monokai_bmacauley.itermcolors
-# - bash-git-prompt + monakai-bmacauley.bgptheme
+# - bash-git-prompt + monokai-bmacauley.bgptheme
 
 
-# Standard prompt - non-git directories
-# 
+# Standard prompt for non-git directories
+#-----------------------------------------
+# - clock
+# - battery indicator
 # - root prompt warning
 # - based on Steve Losh zsh prompt
 #   http://stevelosh.com/blog/2009/03/candy-colored-terminal/
@@ -36,14 +38,11 @@ else
 fi
 
 
-
-# Git prompt - git controlled directories
-# 
+# Git prompt displays standard prompt plus git information
+#----------------------------------------------------------
 # based on magicmonty/bash-git-prompt
 # https://github.com/magicmonty/bash-git-prompt
-# 
-
-
+#
 
 GIT_PROMPT_ONLY_IN_REPO=1
 # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status

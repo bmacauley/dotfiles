@@ -1,33 +1,9 @@
 #!/usr/bin/env bash
-#==============================================
-#
-# .exports
-#
-#==============================================
 
+#=========================================
+# .paths - set $PATH environment variable
+#=========================================
 
-#  Bash history config
-#---------------------
-
-
-# .bash_history configuration
-# erase duplicates
-export HISTCONTROL=erasedups
-
-# Increase Bash history size. Allow 32³ entries; the default is 500.
-export HISTSIZE='32768';
-export HISTFILESIZE="${HISTSIZE}";
-# Omit duplicates and commands that begin with a space from history.
-export HISTCONTROL='ignoreboth';
-
-
-
-
-
-
-# default editor
-#-------------------
-export EDITOR=/usr/bin/vim
 
 
 # Python virtualenv
