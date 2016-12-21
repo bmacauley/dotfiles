@@ -3,4 +3,11 @@
 #=================
 
 
+# provide battery life indicator, use pmset on Mac
+battery_life(){
+	battery -p
+}
+
+
+
 
