@@ -5,9 +5,5 @@
 
 # provide battery life indicator, use pmset on Mac
 battery_life(){
-	battery -p
+	battery -p | sed 's/%/%%/'
 }
-
-
-
-

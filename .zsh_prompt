@@ -35,9 +35,9 @@ NEWLINE=$'\n'
 CLOCK=$'[%t] '
 BATTERY=`battery -a -p| sed 's/%/%%/'`
 if [[ ${EUID} == 0 ]]; then
-  PROMPT='${CLOCK}${BATTERY}${NEWLINE}$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $fg[red]/!!!\ # ' 
+  PROMPT='${CLOCK}$(battery_life)${NEWLINE}$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $fg[red]/!!!\ # ' 
 else
-  PROMPT='${CLOCK}${BATTERY}${NEWLINE}$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $ ' 
+  PROMPT='${CLOCK}$(battery_life)${NEWLINE}$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $ ' 
 fi
 
 
