@@ -16,7 +16,7 @@
 #----------------------------------------------------------
 # based on magicmonty/bash-git-prompt
 # https://github.com/magicmonty/bash-git-prompt
-source /usr/local/Cellar/zsh-git-prompt/0.5/zshrc.sh
+source ~/.prompt/zsh-git-prompt/zshrc.sh
 
 
 
