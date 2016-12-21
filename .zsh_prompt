@@ -33,7 +33,7 @@ source ~/.prompt/zsh-git-prompt/zshrc.sh
 
 NEWLINE=$'\n'
 CLOCK=$'[%t] '
-BATTERY=`battery -a -p| sed 's/%/%%/'`
+
 if [[ ${EUID} == 0 ]]; then
   PROMPT='${CLOCK}$(battery_life)${NEWLINE}$fg[red]%n $fg[white]at $fg[yellow]%m $fg[white]in $fg[green]%~%b$(git_super_status)${NEWLINE}% $fg[red]/!!!\ # ' 
 else
