@@ -128,16 +128,17 @@
 
         # Github flow
         # http://haacked.com/archive/2014/07/28/github-flow-aliases/
+        # http://haacked.com/archive/2015/06/29/git-migrate/
         # http://jayturpin.com/archive/2016/04/23/my_git_cheatsheet/
         ec = config --global -e
         up = !git pull --rebase --prune $@ && git submodule update --init --recursive
         cob = checkout -b
-        cm = commit -m
+        cm = !git add -A && git commit -m
         save = !git add -A && git commit -m 'SAVEPOINT'
         wip = !git add -u && git commit -m "WIP"
         undo = reset HEAD~1 --mixed
         amend = commit -a --amend
-        bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+        bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
         bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
         wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
         migrate = "!f(){ CURRENT=$(git symbolic-ref --short HEAD); git checkout -b $1 && git branch --force $CURRENT ${3-'$CURRENT@{u}'} && git rebase --onto ${2-master} $CURRENT; }; f"
