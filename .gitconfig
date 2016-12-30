@@ -139,7 +139,7 @@
         startb = "!f() { git cob $1 && git pushit; }; f"
         syncb = !git fetch origin ${1-master} && git rebase origin/${1-master}
         cleanb = !git rebase -i origin/${1-master}
-        finishb = "!f() { git rev-parse --abbrev-ref HEAD | xargs -i_branch sh -c 'git checkout ${1-master} -f && git pull origin && git merge _branch --ff-only && git push origin ${1-master}'; }; f"
+        finishb = "!f() { git rev-parse --abbrev-ref HEAD | xargs -I _branch sh -c 'git checkout ${1-master} -f && git pull origin && git merge _branch --ff-only && git push origin ${1-master}'; }; f"
         deleteb = "!f() { git branch -d $1 && git push origin --delete $1;}; f"
         cml = !git add -A && git commit -m
         cm = "!f() { git cml \"$@\" && git push origin;}; f"
