@@ -75,7 +75,7 @@
         sclone = clone --depth=1
 
         # Checkout
-        co = checkout
+
 
         # Cherry-pick
         cp = cherry-pick
@@ -129,11 +129,20 @@
         # Github flow
         # http://haacked.com/archive/2014/07/28/github-flow-aliases/
         # http://haacked.com/archive/2015/06/29/git-migrate/
+        # http://codingmonster.co.uk/blog/1168/automatically-keep-your-history-clean-with-git-aliases
         # http://jayturpin.com/archive/2016/04/23/my_git_cheatsheet/
         ec = config --global -e
-        up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+        co = checkout
         cob = checkout -b
-        cm = !git add -A && git commit -m
+        pushit = "!f() { git rev-parse --abbrev-ref HEAD ; }; git push --set-upstream origin `f`"
+        up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+        startb = "!f() { git cob $1 && git pushit; }; f"
+        syncb = !git fetch origin ${1-master} && git rebase origin/${1-master}
+        cleanb = !git rebase -i origin/${1-master}
+        finishb = "!f() { git rev-parse --abbrev-ref HEAD | xargs -i_branch sh -c 'git checkout ${1-master} -f && git pull origin && git merge _branch --ff-only && git push origin ${1-master}'; }; f"
+        deleteb = "!f() { git branch -d $1 && git push origin --delete $1;}; f"
+        cml = !git add -A && git commit -m
+        cm = "!f() { git cml \"$@\" && git push origin;}; f"
         save = !git add -A && git commit -m 'SAVEPOINT'
         wip = !git add -u && git commit -m "WIP"
         undo = reset HEAD~1 --mixed
@@ -144,15 +153,16 @@
         migrate = "!f(){ CURRENT=$(git symbolic-ref --short HEAD); git checkout -b $1 && git branch --force $CURRENT ${3-'$CURRENT@{u}'} && git rebase --onto ${2-master} $CURRENT; }; f"
         squash = !git checkout master && git merge --no-ff --no-commit
         nuke = !git reset --hard && git clean -fdx
+        new = "!f() { git log $1@{1}..$1@{0} \"$@\" ;}; f"
 
         # Git flow
-        new = !git pull origin develop && git flow feature start
-        done = !git pull origin develop && git flow feature finish "$(git symbolic-ref --short HEAD | sed -n 's/^feature\\///p')"
-        go = !git checkout $1 && pull
-        master = !git checkout master && pull
-        develop = !git checkout develop && pull
-        mmm = !git fetch origin master && git rebase origin/master
-        ddd = !git fetch origin develop && git rebase origin/develop
+        # new = !git pull origin develop && git flow feature start
+        # done = !git pull origin develop && git flow feature finish "$(git symbolic-ref --short HEAD | sed -n 's/^feature\\///p')"
+        # go = !git checkout $1 && pull
+        # master = !git checkout master && pull
+        # develop = !git checkout develop && pull
+        # mmm = !git fetch origin master && git rebase origin/master
+        # ddd = !git fetch origin develop && git rebase origin/develop
 
         # Misc
         publish = "!git push --set-upstream origin $(git branch-name)"
