@@ -18,7 +18,7 @@
 # Some shortcuts for different directory listings
 if [ "$(uname)" = "Darwin" ]; then
     alias ls='ls -G'
-else  
+else
 	alias ls='ls -hF --color=tty'
 fi
 
@@ -73,6 +73,10 @@ alias egrep='egrep --color=auto'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
+
+# open Github repo
+alias gh="open https://github.$(git config remote.origin.url | cut -f2 -d.)"
+
 
 # Get week number
 alias week='date +%V'

@@ -75,7 +75,11 @@
         sclone = clone --depth=1
 
         # Checkout
+        co = checkout
+        cob = checkout -b
 
+        # Export
+        export =
 
         # Cherry-pick
         cp = cherry-pick
