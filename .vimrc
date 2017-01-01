@@ -54,15 +54,19 @@ Plugin 'mattn/gist-vim'
 Plugin 'bling/vim-airline'
 "https://github.com/bling/vim-airline
 set laststatus=2
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#tabline#enabled = 1
-"buggy iterm2 patched font handling, turn off airline separators 
+"buggy iterm2 patched font handling, turn off airline separators
 "in terminal vim
 if &term == 'xterm-256color'
     let g:airline_left_sep=''
     let g:airline_right_sep=''
 endif
+
+"vim airline themes addon"
+"https://github.com/vim-airline/vim-airline-themes"
+Plugin 'vim-airline/vim-airline-themes'
 
 " vim powerline - python
 "Plugin 'powerline/powerline'
@@ -76,7 +80,7 @@ endif
 
 " simplefold - space-optimized, configurable folds
 " https://github.com/vim-scripts/simplefold
-Plugin 'vim-scripts/simplefold' 
+Plugin 'vim-scripts/simplefold'
 
 " l9 - provides some utility functions and commands for programming in Vim
 " https://github.com/vim-scripts/L9
@@ -207,7 +211,7 @@ let g:pymode_folding = 0
 Plugin 'vim-scripts/Efficient-python-folding'
 
 " Jedi-vim - jedi autocompletion library
-" https://github.com/davidhalter/jedi-vim 
+" https://github.com/davidhalter/jedi-vim
 Plugin 'davidhalter/jedi-vim'
 
 " vim-autoclose - enable an auto-close chars feature
@@ -223,7 +227,7 @@ Plugin 'Townk/vim-autoclose'
 " https://github.com/godlygeek/tabular
 Plugin 'godlygeek/tabular'
 
-" vim-markdown - 
+" vim-markdown -
 " http://plasticboy.com/markdown-vim-mode/
 Plugin 'plasticboy/vim-markdown'
 
@@ -259,7 +263,7 @@ Plugin 'tpope/vim-rails'
 " http://cwood.github.io/vim-django/
 Plugin 'cwood/vim-django'
 
-" vim-go - 
+" vim-go -
 " https://github.com/fatih/vim-go
 Plugin 'fatih/vim-go'
 let $GOPATH = "$HOME/go/bin"
@@ -291,7 +295,7 @@ map <Leader>ta <Plug>TaskList
 " https://github.com/mxw/vim-jsx
 Plugin 'mxw/vim-jsx'
 
-"html5 - 
+"html5 -
 "https://github.com/othree/html5.vim
 Plugin 'othree/html5.vim'
 
@@ -376,7 +380,7 @@ set guifont=Inconsolata\ for\ Powerline:h14
 set ruler "display ruler
 set number "display line numbers
 
-"This setting prevents vi from making its annoying beeps when a command doesn't work. 
+"This setting prevents vi from making its annoying beeps when a command doesn't work.
 "Instead, it briefly flashes the screen -- much less annoying.
 set vb t_vb=
 
@@ -402,7 +406,7 @@ if has('statusline')
 endif
 
 " command <Tab> completion, list matches, then longest common part, then all.
-set wildmode=list:longest,full 
+set wildmode=list:longest,full
 set wildmenu  " show list instead of just completing
 set showmatch " show matching brackets
 set incsearch " find as you type search
@@ -446,7 +450,7 @@ hi ColorColumn ctermbg=236 guibg=lightgrey
 "let mapleader = ","
 "let g:mapleader = ","
 
- " Making it so ; works like : for commands. Saves typing and eliminates 
+ " Making it so ; works like : for commands. Saves typing and eliminates
  " :W style typos due to lazy holding shift.
 nnoremap ; :
 "clearing highlighted search
@@ -460,7 +464,7 @@ cmap cd. lcd %:p:h
 
 " Smart mappings on the command line
 "home directory
-cno $h e ~/  
+cno $h e ~/
 "desktop
 cno $d e ~/Desktop/
 " current directory
