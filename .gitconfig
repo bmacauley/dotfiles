@@ -2,6 +2,12 @@
 # .gitconfig
 #==============
 
+# forces you to configure your Git user on a per-repository basis
+# Multiple personailities in Git
+# http://collectiveidea.com/blog/archives/2016/04/04/multiple-personalities-in-git
+[user]
+  useConfigOnly = true
+
 # cache credentials in the secure keychain
 [credential]
         helper = osxkeychain
@@ -239,7 +245,7 @@
 
 
 [core]
-  excludesfile = /Users/bmacauley/.gitignore
+  excludesfile = ~/.gitignore
 
 [http]
 
