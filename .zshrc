@@ -24,7 +24,9 @@ setopt SHARE_HISTORY 			# share history between sessions, reloads the history wh
 setopt COMPLETE_IN_WORD 		# Completion can begin in word
 
 # add custom completion scripts
-fpath=(~/.zsh/completion /usr/local/share/zsh-completions $fpath)
+fpath=(~/.zsh/completion  $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 
 autoload -U compinit  			# activate zsh completions
 compinit
