@@ -45,7 +45,7 @@ setopt PROMPT_SUBST      		# parameter expansion, command substitution and arith
 
 
 # Other settings
-setopt CORRECT  				# correct the spelling of commands
+#setopt CORRECT  				# correct the spelling of commands
 setopt IGNORE_EOF  				# Do not exit on end-of-file
 setopt EXTENDED_GLOB  			# Treat the ‘#’, ‘~’ and ‘^’ characters as part of patterns for filename generation
 setopt NUMERIC_GLOB_SORT 		#  sort the filenames numerically rather than lexicographically.
