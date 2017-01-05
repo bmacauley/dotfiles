@@ -1,5 +1,5 @@
-dotfiles - bmacauley
-===========================
+dotfiles 
+=========
 This is a collection of dotfiles used for customizing macOS/Linux and setting up the developer tools I use. Clone to your home directory so that the path is ~/.dotfiles/ and symlink the dotfiles to the home directory. 
 
 ######ITerm2
