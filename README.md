@@ -31,3 +31,5 @@ $ ./install.sh
 MIT
 
 ##Author
+
+Brian Macauley
