@@ -77,7 +77,16 @@ alias sudo='sudo '
 # open Github repo
 alias gh="open $(git config remote.origin.url)"
 
-
+# git export repo master
+# usage: gexport $1
+# $1 - git repo
+function gexport(){
+	repo=$(basename $1)
+	dir=${repo%.*}
+	git clone $1
+	cd $dir
+	rm -rf .git
+}
 # Get week number
 alias week='date +%V'
 
