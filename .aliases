@@ -75,7 +75,7 @@ alias egrep='egrep --color=auto'
 alias sudo='sudo '
 
 # open Github repo
-alias gh="open $(git config remote.origin.url)"
+alias gh="open $(git config --get remote.origin.url)"
 
 # git export repo master
 # usage: gexport $1
