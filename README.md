@@ -28,8 +28,9 @@ $ ./install.sh
 
 ##License
 
-MIT
+[MIT]()
 
 ##Author
 
-Brian Macauley
+Brian Macauley  
+brian.macauley@gmail.com
