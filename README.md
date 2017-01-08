@@ -32,7 +32,7 @@ $ ./install.sh
 
 ##License
 
-[MIT]()
+[MIT](https://github.com/bmacauley/dotfiles/blob/master/LICENSE)
 
 ##Author
 
