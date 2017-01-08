@@ -36,3 +36,11 @@ shopt -s histappend						# when a shell session exits, append history to .bash_h
 # Bash default editor
 #-------------------
 export EDITOR=/usr/bin/vim
+
+
+# FASD config
+#-----------------
+# https://github.com/clvv/fasd
+# command line productivity booster. Quick access to frequently access files and directories
+
+eval "$(fasd --init auto)"
