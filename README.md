@@ -9,9 +9,13 @@ This is a collection of dotfiles used for customizing macOS/Linux and setting up
 <img width="781" alt="05_01_2017__22_47" src="https://cloud.githubusercontent.com/assets/51250/21701582/4815208c-d39e-11e6-9265-77ba6c60d0a1.png">
 
 ##Features
-- bash/zsh custom prompt with git and battery
+- custom iTerm2 colour scheme and font
+- custom bash/zsh prompt with git and battery
+- bash/zsh configuration
 - bash/zsh aliases
 - git aliases
+- git ignores
+- tmux
 - vim config
 - macOS configs
 
