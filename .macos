@@ -7,55 +7,6 @@
 sudo -v
 
 
-
-
-
-# SSD-specific tweaks
-#------------------------------------------------------------------------------
-
-# Disable local Time Machine snapshots
-sudo tmutil disablelocal
-
-# Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
-
-# Remove the sleep image file to save disk space
-# sudo rm /Private/var/vm/sleepimage
-  # Create a zero-byte file instead…
-  # sudo touch /Private/var/vm/sleepimage
-  # …and make sure it can’t be rewritten
-  # sudo chflags uchg /Private/var/vm/sleepimage
-
-# Disable the sudden motion sensor as it’s not useful for SSDs
-sudo pmset -a sms 0
-
-
-
-
-# Screen
-#------------------------------------------------------------------------------
-
-# Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
-
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
-
-# Hide all desktop icons because who need 'em'
-defaults write com.apple.finder CreateDesktop -bool false
-
-# Disable shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
-
-# Enable subpixel font rendering on non-Apple LCDs
-#defaults write NSGlobalDomain AppleFontSmoothing -int 2
-
-# Enable HiDPI display modes (requires restart)
-#sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
-
-
-
-
 # iTerm2
 #------------------------------------------------------------------------------
 
