@@ -144,6 +144,7 @@
         ec = config --global -e
         co = checkout
         cob = checkout -b
+        set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
         pushit = "!f() { git rev-parse --abbrev-ref HEAD ; }; git push --set-upstream origin `f`"
         up = !git pull --rebase --prune $@ && git submodule update --init --recursive
         startb = "!f() { git cob $1 && git pushit; }; f"
