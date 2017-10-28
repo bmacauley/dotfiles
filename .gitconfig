@@ -95,9 +95,33 @@
         dc = diff --cached
         df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
+        # Show modified files in last commit
+        dl = "!git ll -1"
+
+        # Show a diff last commit
+        dlc = diff --cached HEAD^
+
+        # Show content (full diff) of a commit given a revision
+        dr  = "!f() { git diff "$1"^.."$1"; }; f"
+        lc  = "!f() { git ll "$1"^.."$1"; }; f"
+        diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+
+
+
         # Edit .gitconfig
         ec = config --global -e
 
+        # Find a file path in codebase
+        f = "!git ls-files | grep -i"
+
+        # all the commits related to a file, with the diff of the changes
+        fl = log -u
+
+        # Search/grep your entire codebase for a string
+        gr = grep -Ii
+
+        # Grep from root folder
+        gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
 
         # Merge
         m = merge
@@ -121,9 +145,35 @@
         s = status
         ss = status -sb
         hist = log --graph --pretty=custom           # Show custom graph
-        l = log --pretty=custom                      # Show custom log
-        ll = log --stat --abbrev-commit
+
+
+        # List all your Aliases
+        la = "!git config -l | grep alias | cut -c 7-"
+
+
         lc = shortlog --summary --numbered           # List contributors
+
+        # List commits in short form, with colors and branch/tag annotations.
+        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+
+        # List commits showing changed files
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+        # List with no colours
+        lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
+        # List oneline commits showing dates
+        lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+        # List oneline commits showing relative dates
+        ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+        # default look for short git log
+        le = log --oneline --decorate
+
+        # show last tag
+        lt = describe --tags --abbrev=0
+
 
         # Reset
         unstage = reset HEAD --                      # Mixed reset (affects HEAD and Index)
@@ -132,6 +182,12 @@
 
         # Remote
         r = remote -v
+
+        sl = stash list
+        sa = stash apply
+        ss = stash save
+
+
 
         # Submodules
         subpl = submodule update --init --recursive
@@ -243,6 +299,17 @@
   }; f"
 
 #------------------------------------------------------------------
+
+  # Git Alias to remove local tag and remote tag in one command!
+
+  rmtag = "!f() { \
+        git tag -d ${1}; \
+        git push origin :refs/tags/${1}; \
+        git tag; \
+  }; f"
+
+#-------------------------------------------------------------------
+
 
 
 [core]
