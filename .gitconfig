@@ -192,6 +192,30 @@
         # Submodules
         subpl = submodule update --init --recursive
 
+
+        # tags
+
+
+        # add tag
+        addtag = "!f() {git tag -a $1 -m $2 && git push origin --tags; }; f"
+
+        # delete tag
+        deltag = "!f() { git tag -d $1 && git push origin :refs/tags/$1; }; f"
+
+        # Remove the tag with the specified tag name if
+        # exists and tag the latest commit with that name
+        retag = "!f() { \
+          git tag -d "$1" &> /dev/null; \
+          git tag $1; \
+        }; f"
+
+
+
+
+
+
+
+
         # Github flow
         # http://haacked.com/archive/2014/07/28/github-flow-aliases/
         # http://haacked.com/archive/2015/06/29/git-migrate/
