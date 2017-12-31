@@ -197,7 +197,7 @@
 
 
         # add tag
-        addtag = "!f() {git tag -a $1 -m $2 && git push origin --tags; }; f"
+        addtag = "!f() { args=(\"$@\"); git tag -a ${args[0]} -m \"${args[1]}\" && git push origin --tags; }; f"
 
         # delete tag
         deltag = "!f() { git tag -d $1 && git push origin :refs/tags/$1; }; f"
