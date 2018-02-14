@@ -77,5 +77,37 @@ export EDITOR=/usr/bin/vim 		# default terminal editor
 eval "$(fasd --init auto)"
 
 
+# direnv
+#------------------------
+eval "$(direnv hook zsh)"
 
+
+
+
+#  Python virtualenv
+# activate virtualenvwrapper
+#-------------------
+export WORKON_HOME=$HOME/.virtualenvs
+
+if [ "$(uname)" = "Darwin" ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+    source /usr/bin/virtualenvwrapper.sh
+elif [ "$(expr substr $(uname -s) 1 10)" = "MINGW32_NT" ]; then
+    source /usr/bin/virtualenvwrapper.sh
+fi
+
+# pyenv-virtualenv
+# activate pyenv-virtualenv for pyenv Python environments
+# https://github.com/pyenv/pyenv-virtualenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+
+
+# rbenv
+# activate rbenv for ruby environments
+#--------------------
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
