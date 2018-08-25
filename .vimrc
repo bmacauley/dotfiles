@@ -261,7 +261,7 @@ Plugin 'tpope/vim-rails'
 
 " vim-django -  django things in vim
 " http://cwood.github.io/vim-django/
-Plugin 'cwood/vim-django'
+"Plugin 'cwood/vim-django'
 
 " vim-go -
 " https://github.com/fatih/vim-go
