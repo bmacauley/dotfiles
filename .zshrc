@@ -69,6 +69,7 @@ unsetopt bg_nice                # no lower priority for background jobs
 export EDITOR=/usr/bin/vim 		# default terminal editor
 
 
+#
 
 
 # FASD config

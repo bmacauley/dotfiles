@@ -198,3 +198,17 @@ alias reload="exec $SHELL -l"
 
 # tmuxinator
 alias mux="tmuxinator"
+
+
+#--------------------
+# Docker aliases
+# (requires Docker installation )
+#--------------------
+
+# gimme-aws-creds ...Okta authentication for AWS CLI
+alias gimme-aws-creds="docker run -it --rm \
+  -v ~/.aws/credentials:/root/.aws/credentials \
+  -v ~/.okta_aws_login_config:/root/.okta_aws_login_config \
+  gimme-aws-creds"
+
+
