@@ -7,6 +7,18 @@
 sudo -v
 
 
+# macos
+#------------------------------------------------------------------------------
+
+# Display hidden files ..ie dotfiles in $HOME
+defaults write com.apple.Finder AppleShowAllFiles true
+
+# Set font smoothing to minimal
+defaults -currentHost write -globalDomain AppleFontSmoothing -int 1
+
+
+
+
 # iTerm2
 #------------------------------------------------------------------------------
 

@@ -64,6 +64,14 @@ unsetopt bg_nice                # no lower priority for background jobs
 
 
 
+# Load dotfiles
+#---------------
+for file in ~/.{paths,zsh_prompt,aliases,functions}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+
 # Bash default editor
 #-------------------
 export EDITOR=/usr/bin/vim 		# default terminal editor

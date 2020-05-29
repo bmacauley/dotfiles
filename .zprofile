@@ -16,10 +16,10 @@ fi
 
 # Load dotfiles
 #---------------
-for file in ~/.{paths,zsh_prompt,aliases,functions}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+# for file in ~/.{paths,zsh_prompt,aliases,functions}; do
+# 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+# done;
+# unset file;
 
 
 
