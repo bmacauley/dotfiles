@@ -8,9 +8,19 @@
 [user]
   useConfigOnly = true
 
+
+
 # cache credentials in the secure keychain
 [credential]
-        helper = osxkeychain
+
+# configure git to to change  user and git url if directory is as follows
+# this allows git to pick up the correct key configured in ~/.ssh/config
+[includeIf "gitdir:~/projects/github.com/bmacauley/"]
+    path = ~/.gitconfig.personal
+
+[url "github.com-bmacauley:bmacauley/"]
+    insteadOf = git@github.com:bmacauley/
+
 
 # Use separate file for username / github token / etc
 [include]
@@ -18,7 +28,7 @@
 
 # Git mergetool
 [merge]
-        tool = opendiff
+	tool = opendiff
 
 # git fs aliases
 # https://shuhrat.github.io/programming/git-lfs-tips-and-tricks.html
@@ -26,6 +36,7 @@
   clean = git lfs clean %f
   smudge = git lfs smudge %f
   required = true
+	process = git-lfs filter-process
 
 
 # default push behaviour
@@ -331,13 +342,15 @@
         git push origin :refs/tags/${1}; \
         git tag; \
   }; f"
+	github = "! git config user.name \"$(git config user.$1.name)\"; git config user.email \"$(git config user.$1.email)\" :"
+	identity = "! git config user.name \"$(git config user.$1.name)\"; git config user.email \"$(git config user.$1.email)\"; git config user.signingkey \"$(git config user.$1.signingkey)\"; :"
 
 #-------------------------------------------------------------------
 
 
 
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/bmacauley/.gitignore
 
 [http]
 
@@ -365,3 +378,19 @@
 
 [url "https://bitbucket.org/"]
     insteadOf = bb:
+[mu-repo]
+	remote-base-url = git@github.com:rewardinsight
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/bmacauley/.stCommitMsg
+[user "github"]
+	name = Brian Macauley
+	email = brian.macauley@gmail.com
+
+[remote "origin"]
+	fetch = +refs/pull/*:refs/remotes/origin/pull/*
