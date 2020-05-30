@@ -209,6 +209,6 @@ alias mux="tmuxinator"
 alias gimme-aws-creds="docker run -it --rm \
   -v ~/.aws/credentials:/root/.aws/credentials \
   -v ~/.okta_aws_login_config:/root/.okta_aws_login_config \
-  gimme-aws-creds"
+  bmacauley/gimme-aws-creds"
 
 
